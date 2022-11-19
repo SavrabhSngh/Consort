@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Consort/static/css/main.c4f75d05.css",
+    "main.js": "/Consort/static/js/main.6ae07d97.js",
+    "index.html": "/Consort/index.html",
+    "main.c4f75d05.css.map": "/Consort/static/css/main.c4f75d05.css.map",
+    "main.6ae07d97.js.map": "/Consort/static/js/main.6ae07d97.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4f75d05.css",
+    "static/js/main.6ae07d97.js"
+  ]
+}
