@@ -1,0 +1,8 @@
+footer {
+    position: fixed;
+    bottom: 2%;
+}
+footer span {
+    color: #ff014f;
+    cursor: pointer;
+}

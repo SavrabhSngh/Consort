@@ -1,0 +1,92 @@
+.login {
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+    flex-direction: column;
+}
+
+.form {
+    background: #282a36;
+    padding: 20px;
+    border-radius: 10px;
+    width: 35%;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3%;
+}
+
+.logo div h4 {
+    color: #ff014f;
+}
+
+img {
+    height: 85px;
+    width: auto;
+}
+
+.label {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field{
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: #eee;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+.join-btn {
+    background: #ff014f;
+    color: #fff;
+    width: 100px;
+    margin-left: auto;
+    margin-top: 6px;
+}
+
+.join-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.room-info {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 676px) {
+    .form {
+        width: 85%;
+    }
+
+    .room-info{
+        text-align: center;
+    }
+}
+
+@media (min-width: 676px) and (max-width: 768px) {
+    .form {
+        width: 60%;
+    }
+
+    .room-info{
+        text-align: center;
+    }
+}
