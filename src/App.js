@@ -35,7 +35,7 @@ const App = () => {
 
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login />}></Route>
+          <Route exact path="/Consort" element={<Login />}></Route>
           <Route path="/session/:roomId" element={<ProtectedRoute />}>
             <Route path="" element={<Session />} />
           </Route>
