@@ -1,12 +1,14 @@
 import Footer from "../Common/Footer/Footer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 import { v4 } from "uuid";
+import { saveCurrentUserDetails } from "../../Store/CurrentUser/action";
 import toast from "react-hot-toast";
 import _ from "lodash";
 import "./login.css";
 
-const Login = () => {
+const Login = (props) => {
   const [roomID, setRoomID] = useState("");
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
@@ -19,11 +21,14 @@ const Login = () => {
   };
 
   const handleJoin = () => {
-    localStorage.setItem("token", roomID);
     if (_.isEqual(roomID, "") || _.isEqual(userName, "")) {
       toast.error("Room ID and Username is required");
       return;
     }
+    props.saveCurrentUserDetails({
+      username: userName,
+      roomID: roomID,
+    });
     navigate(`/session/${roomID}`);
   };
 
@@ -75,4 +80,10 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {};
+};
+
+export default connect(mapStateToProps, {
+  saveCurrentUserDetails,
+})(Login);

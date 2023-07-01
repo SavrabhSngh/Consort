@@ -6,3 +6,10 @@ export const SOCKET_SYNC_CODE = "sync_code";
 export const SOCKET_LEAVE = "leave";
 export const SOCKET_CONNECTION_FAILED = "connection_failed";
 export const SOCKET_CONNECTION_ERROR = "connection_error";
+
+export const SOCKET_OPTION = {
+  "force new connection": true,
+  reconnectionAttempt: "10",
+  timeout: 10000,
+  transport: ["websocket"],
+};

@@ -1,30 +1,8 @@
+import { connect } from "react-redux";
 import Avatar from "react-avatar";
 import "./SideBar.css";
 
-const SideBar = () => {
-  const avtar = [
-    {
-      socketId: 1,
-      name: "Saurabh Singh",
-    },
-    {
-      socketId: 2,
-      name: "Web Socket",
-    },
-    {
-      socketId: 3,
-      name: "New Socket",
-    },
-    {
-      socketId: 4,
-      name: "No Name",
-    },
-    {
-      socketId: 5,
-      name: "MR. Socket",
-    },
-  ];
-
+const SideBar = (props) => {
   return (
     <div className="sidebar">
       <div className="sidebar-top">
@@ -42,11 +20,11 @@ const SideBar = () => {
             <hr />
           </div>
           <div className="folks">
-            {avtar.map((obj) => {
+            {props.connectedUsers.map((obj, index) => {
               return (
-                <div key={obj.socketId} className="dflex">
-                  <Avatar name={obj.name} size="70" round="50%" />
-                  <p>{obj.name}</p>
+                <div key={index} className="dflex">
+                  <Avatar name={obj.userName} size="70" round="50%" />
+                  <p>{obj.userName}</p>
                 </div>
               );
             })}
@@ -61,4 +39,10 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+const mapStateToProps = (state) => {
+  return {
+    connectedUsers: state.connectedUsers || [],
+  };
+};
+
+export default connect(mapStateToProps, {})(SideBar);

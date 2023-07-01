@@ -5,8 +5,12 @@ import { useEffect } from "react";
 import { DataService } from "../../Services/DataService";
 
 const Session = () => {
+  var flag = false;
   useEffect(() => {
-    DataService.initSocket();
+    if (!flag) {
+      DataService.initSocket();
+      flag = true;
+    }
   }, []);
 
   return (

@@ -1,8 +1,15 @@
 import { Outlet, Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import _ from "lodash";
 
-const ProtectedRoute = () => {
-  const data = localStorage.getItem("token");
-  return data ? <Outlet /> : <Navigate to="/" />;
+const ProtectedRoute = (props) => {
+  return !_.isEmpty(props.roomID) ? <Outlet /> : <Navigate to="/" />;
 };
 
-export default ProtectedRoute;
+const mapStateToProps = (state) => {
+  return {
+    roomID: state.currentUser?.roomID || "",
+  };
+};
+
+export default connect(mapStateToProps, {})(ProtectedRoute);
